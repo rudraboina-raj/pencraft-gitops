@@ -1,6 +1,6 @@
 backend:
-  image: "asia-south1-docker.pkg.dev/project-8544d2b1-f78e-4448-bfc/pencraft/java-store"
+  image: "asia-south1-docker.pkg.dev/project-8544d2b1-f78e-4448-bfc/pencraft/java-store:09e94e58aaf4aba7c1b1cf82e6dcd5f7ea695fea"
   replicaCount: 1
 frontend:
-  image: "asia-south1-docker.pkg.dev/project-8544d2b1-f78e-4448-bfc/pencraft/frontend"
+  image: "asia-south1-docker.pkg.dev/project-8544d2b1-f78e-4448-bfc/pencraft/frontend:09e94e58aaf4aba7c1b1cf82e6dcd5f7ea695fea"
   replicaCount: 1
