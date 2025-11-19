@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/mokadi-suryaprasad/pencraft-gitops.git'   # <-- use your real repo URL
+    repoURL: 'https://github.com/rudraboina-raj/pencraft-gitops.git'   # <-- use your real repo URL
     targetRevision: dev                                                  # <-- branch for dev env
     path: charts/pencraft
     helm:
