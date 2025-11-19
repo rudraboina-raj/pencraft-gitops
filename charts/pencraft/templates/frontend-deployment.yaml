@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "pencraft.frontendName" . }}
+  labels:
+    app: {{ include "pencraft.frontendName" . }}
+spec:
+  replicas: {{ .Values.frontend.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "pencraft.frontendName" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "pencraft.frontendName" . }}
+    spec:
+      containers:
+        - name: frontend
+          image: "{{ .Values.frontend.image }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

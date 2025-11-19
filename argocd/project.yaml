@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: pencraft
+  namespace: argocd
+spec:
+  description: GitOps project for Pencraft microservices
+
+  # ---------------- Allowed Git Repositories ----------------
+  sourceRepos:
+    - https://github.com/mokadi-suryaprasad/pencraft-gitops.git
+
+  # ---------------- Allowed Clusters / Namespaces ------------
+  destinations:
+    - namespace: pencraft-dev
+      server: https://kubernetes.default.svc
+    - namespace: pencraft-preprod
+      server: https://kubernetes.default.svc
+    - namespace: pencraft-prod
+      server: https://kubernetes.default.svc
+
+  # ---------- Allowed cluster-scoped resources (safe set) ---
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+    - group: ""
+      kind: ServiceAccount
+    - group: apps
+      kind: Deployment
+    - group: ""
+      kind: Service
+
+  # --------- Allowed namespace resources (safe set) ----------
+  namespaceResourceWhitelist:
+    - group: ""
+      kind: ConfigMap
+    - group: ""
+      kind: Secret
+    - group: ""
+      kind: Pod
+    - group: apps
+      kind: Deployment
+    - group: ""
+      kind: Service
+
+  # (Optional) Add RBAC roles here if needed later

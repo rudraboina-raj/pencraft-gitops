@@ -1,0 +1,7 @@
+backend:
+  image: "asia-south1-docker.pkg.dev/gcp-zero-to-hero-467513/pencraft/java-store@sha256:6e63a74433f55f0ccd184fb04e638fb72fe8041dbc17655e05fdfebf487b9915"
+  replicaCount: 1
+
+frontend:
+  image: "asia-south1-docker.pkg.dev/gcp-zero-to-hero-467513/pencraft/frontend@sha256:e04ad7a73f8a5c977371a0cc32df2e73bf60a5a5be55148ab1ee750bdea4cb4c"
+  replicaCount: 1

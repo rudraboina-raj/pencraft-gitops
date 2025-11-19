@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "pencraft.backendName" . }}
+  labels:
+    app: {{ include "pencraft.backendName" . }}
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "pencraft.backendName" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "pencraft.backendName" . }}
+    spec:
+      containers:
+        - name: java-store
+          image: "{{ .Values.backend.image }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

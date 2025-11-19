@@ -1,0 +1,9 @@
+PenCraft deployed successfully!
+
+Backend:
+  URL (ClusterIP): java-store:8080
+
+Frontend:
+  External LoadBalancer will be created. Run:
+  kubectl get svc -n <namespace>
+

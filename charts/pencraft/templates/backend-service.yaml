@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "pencraft.backendName" . }}
+spec:
+  selector:
+    app: {{ include "pencraft.backendName" . }}
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
