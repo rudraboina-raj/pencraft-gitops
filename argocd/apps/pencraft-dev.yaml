@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/rudraboina-raj/pencraft-gitops.git'   # <-- use your real repo URL
-    targetRevision: dev                                                  # <-- branch for dev env
+    targetRevision: main                                                # <-- branch for dev env
     path: charts/pencraft
     helm:
       valueFiles:
