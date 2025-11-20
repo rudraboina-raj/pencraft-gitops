@@ -14,6 +14,8 @@ spec:
       labels:
         app: {{ include "pencraft.backendName" . }}
     spec:
+      imagePullSecrets:
+        - name: artifact-registry-secret
       containers:
         - name: java-store
           image: "{{ .Values.backend.image }}"
